@@ -94,7 +94,11 @@ picture{
 
 /*Hamburger Menu*/
 .menu-icon {
-  font-size: 2em;                    /* Set size of hamburger menu icon */
+  padding-left: 2%;
+  padding-right: 0%;
+  padding-top: 5%;
+  float: left;
+  font-size: 4em;                    /* Set size of hamburger menu icon */
   color: var(--color-black);         /* Set color of hamburger menu icon */
 }
 
@@ -219,8 +223,9 @@ padding-right: 8px;
     width: 120px;
     height: 120px;
     padding: 0%;
-    padding: 0%;
-    margin: auto;
+    align-items: center;
+    margin: none;
+    position: relative; right: 7%;
   
 }
 } 
