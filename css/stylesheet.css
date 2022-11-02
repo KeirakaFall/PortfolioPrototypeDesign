@@ -26,10 +26,7 @@ grid-row-gap: 0px;
 
   .logoContainer{
     grid-area: header;
-  }
-
-  .nav-container{
-    grid-area: nav;
+    margin-bottom: 0%;
   }
 
  
@@ -75,16 +72,6 @@ grid-row-gap: 0px;
     grid-row: span 3;
   }
 
-  @media screen and (max-width:1024px){
-    .image-grid {
-      --num-cols:2;
-      --row-height: 200px;
-      margin:0%;
-    }
-  
-  }
-
-
 
 
 /* Logo Header*/
@@ -100,6 +87,43 @@ grid-row-gap: 0px;
     
 }
 
+picture{
+  padding-bottom: 5%;
+  margin-bottom: 100%;
+}
+
+/*Hamburger Menu*/
+.menu-icon {
+  font-size: 2em;                    /* Set size of hamburger menu icon */
+  color: var(--color-black);         /* Set color of hamburger menu icon */
+}
+
+#checkbox {
+  display: none;                     /* Although the checkbox functionality is needed, we don't want to see the actual checkbox */
+}
+#checkbox:checked ~ nav ul {
+  max-height: 11em;                  /* When the checkbox is checked, expand the height of ul to reveal navigation */
+}
+
+/* desktop/large screen settings */
+@media (min-width: 767px) {             /* Media Query for larger screens */
+  .menu-icon {
+       display: none;                /* Hide hamburger menu icon on larger screens */
+  }
+  .menu-bar {
+       position: relative;
+       top: -1em;                    /* Move navigation links up (as they no longer need to be below hamburger icon) */
+  }
+  .menu-bar ul{
+       max-height: 0.75em;           /* Adjust max-height to fit content horizontally rather than vertically */
+       padding: 15px 0;
+  }
+  .menu-bar ul li {
+       display: inline-block;        /* Display list items as an inline-block (on a single line) */
+       padding-left: 1em;            /* Add padding between horizontal links */
+  }
+}
+
 
 /* Nav Bar (in header) */
 .menu-bar {
@@ -109,7 +133,7 @@ grid-row-gap: 0px;
     display: flex;
     justify-content: center;
     align-items: left;
-    padding: 0%;
+    padding: 1%;
     margin: 0%;
     position: relative;
   }
@@ -118,6 +142,10 @@ grid-row-gap: 0px;
     list-style: none;
     display: flex;
     align-items: center;
+    list-style-type: none;             
+    max-height: 0em;                   
+    overflow: hidden;                  
+    transition: max-height 0.5s;   
   }
   
   .menu-bar ul li {
@@ -137,46 +165,12 @@ grid-row-gap: 0px;
     color: var(--color-primary);
   }
   
-  .fas {
-    float: right;
-    margin-left: 10px;
-    padding-top: 3px;
-  }
   
-  /* dropdown menu style */
-  .dropdown-menu {
-    display: none;
+  .menu-bar ul li{
+    text-align: center;
+    padding-top: 5%;
   }
-  
-  .menu-bar ul li:hover .dropdown-menu {
-    display: block;
-    position: absolute;
-    left: 0;
-    top: 100%;
-    background-color: var(--color-grey);
-  }
-  
-  .menu-bar ul li:hover .dropdown-menu ul {
-    display: block;
-    margin: 10px;
-  }
-  
-  .menu-bar ul li:hover .dropdown-menu ul li {
-    width: 150px;
-    padding: 10px;
-  }
-  
-  .dropdown-menu-1 {
-    display: none;
-  }
-  
-  .dropdown-menu ul li:hover .dropdown-menu-1 {
-    display: block;
-    position: absolute;
-    left: 150px;
-    top: 0;
-    background-color: #657c7e;
-  }
+
 
 
 /*Footer*/
@@ -210,15 +204,23 @@ padding-right: 8px;
 
 /*Responsive Styles*/
 
+@media screen and (max-width:1024px){
+  .image-grid {
+    --num-cols:2;
+    --row-height: 200px;
+    margin:0%;
+  }
+
+}
+
+
 @media screen and (max-width:767px){
   .Logo{
-    width: 427px;
-    height: 86px;
+    width: 120px;
+    height: 120px;
     padding: 0%;
     padding: 0%;
     margin: auto;
-    
+  
 }
-}
-
-
+} 
